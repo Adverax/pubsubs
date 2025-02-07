@@ -94,7 +94,9 @@ func (that *defaultExecutor) Execute(
 	ctx context.Context,
 	action Action,
 ) {
-	_ = action.Execute(ctx)
+	go func(ctx context.Context) {
+		_ = action.Execute(ctx)
+	}(ctx)
 }
 
 var DefaultExecutor Executor = &defaultExecutor{}
