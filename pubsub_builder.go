@@ -11,7 +11,7 @@ type Builder[T any] struct {
 func NewBuilder[T any]() *Builder[T] {
 	return &Builder[T]{
 		ps: &PubSub[T]{
-			executor: defExecutor,
+			executor: DefaultExecutor,
 		},
 	}
 }

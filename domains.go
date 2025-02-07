@@ -97,4 +97,4 @@ func (that *defaultExecutor) Execute(
 	_ = action.Execute(ctx)
 }
 
-var defExecutor = &defaultExecutor{}
+var DefaultExecutor Executor = &defaultExecutor{}
